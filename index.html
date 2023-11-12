@@ -1,1 +1,100 @@
 
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="icon" type="image/jpeg" href="images.jpeg"/>
+  <title>Infmapi is here</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-image: url('original-d521e3ffb5dade0669d556273c1d53d2.jpg');
+      background-size: cover;
+      font-family: Arial, sans-serif;  
+    }
+
+    .myButton {
+      background-color: black; /* Change button background color to black */
+      color: white; /* Change button text color to white */
+      border: 4px solid #fff;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      font-size: 20px;
+    }
+
+    .myButton::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background-color: #FF5733;
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s ease-out, height 0.3s ease-out, background-color 0.3s ease-out;
+      opacity: 0.5;
+    }
+
+    .myButton:hover::before {
+      width: 200%;
+      height: 200%;
+      background-color: #FF5733;
+    }
+
+    .myButton:hover {
+      border-color: red;
+    }
+
+    /* Updated styles for the text inside <h1> */
+    h1 {
+      font-size: 42px; /* Adjust the size as needed */
+      color: black;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <div>
+      <h1> New proxy coming soon (Prime change the background back)! Prime - No because we are changing the theme to red </h1>
+    </div>
+    <div>
+      <button class="myButton" id="playButton">Play Now!! (New Massive Update) </button>
+      <div>
+        <button class="myButton" id="historyButton">Changelog</button>
+      </div>
+    </div>
+  </center>
+</body>
+<script>
+  const playButton = document.querySelector('#playButton');
+  const historyButton = document.querySelector('#historyButton');
+  const iframe = document.createElement('iframe');
+  iframe.style.width = '100%';
+  iframe.style.height = '100%';
+  iframe.style.position = 'absolute';
+  iframe.style.top = '0';
+  iframe.style.left = '0';
+  iframe.style.bottom = '0';
+  iframe.style.right = '0';
+
+  playButton.addEventListener('click', () => {
+    const newWindow = window.open('about:blank', '_blank');
+    iframe.src = 'https://infmapr.netlify.app/selection.html';
+    newWindow.document.body.appendChild(iframe);
+  });
+
+  historyButton.addEventListener('click', () => {
+    const newWindow = window.open('about:blank', '_blank');
+    iframe.src = 'https://infmapr.netlify.app/history.html';
+    newWindow.document.body.appendChild(iframe);
+  });
+</script>
+</html>
